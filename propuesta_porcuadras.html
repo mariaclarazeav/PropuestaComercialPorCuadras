@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZEAL × Por Cuadras — Propuesta Comercial</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cherry: #8B0000;
+    --cherry-light: #A50000;
+    --cherry-dark: #5C0000;
+    --noir: #0D0D0D;
+    --noir-soft: #1A1A1A;
+    --cream: #F7F3EE;
+    --cream-dark: #EDE6DC;
+    --warm-white: #FAFAF8;
+    --gold: #C4A265;
+    --gold-light: #D4B97A;
+    --text-muted: #6B6B6B;
+    --border: rgba(139,0,0,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--warm-white);
+    color: var(--noir);
+    overflow-x: hidden;
+  }
+
+  /* ─── TYPOGRAPHY ─── */
+  .serif { font-family: 'Cormorant Garamond', serif; }
+
+  h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1.1; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: rgba(13,13,13,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(139,0,0,0.3);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo span { color: var(--cherry-light); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: #fff; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    background: var(--noir);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 70% 50%, rgba(139,0,0,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 140px 60px 80px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cherry-light);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    background: var(--cherry-light);
+  }
+
+  .hero-title {
+    font-size: clamp(56px, 7vw, 96px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 0.95;
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--cherry-light);
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 48px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--cherry);
+    color: #fff;
+    padding: 16px 36px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+    width: fit-content;
+  }
+
+  .hero-cta:hover {
+    background: transparent;
+    border-color: var(--cherry);
+    color: var(--cherry-light);
+  }
+
+  .hero-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    padding: 100px 60px;
+  }
+
+  .hero-logo-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .hero-logo-img {
+    width: 220px;
+    height: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+  }
+
+  .hero-for-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em;
+  }
+
+  .hero-client {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: -0.02em;
+    text-align: center;
+  }
+
+  .hero-divider {
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--cherry), transparent);
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .hero-meta-item {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ─── SECTION BASE ─── */
+  section { position: relative; }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 60px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cherry);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ─── PAGE 2 — DIAGNÓSTICO ─── */
+  .diagnostico {
+    background: var(--cream);
+  }
+
+  .diagnostico-intro {
+    max-width: 780px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--noir-soft);
+    margin-bottom: 64px;
+  }
+
+  .diagnostico-intro strong {
+    color: var(--cherry);
+    font-weight: 600;
+  }
+
+  .diagnostico-table-wrap {
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .diagnostico-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .diagnostico-table thead tr th {
+    padding: 20px 32px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .th-cherry {
+    background: var(--cherry);
+    color: #fff;
+    text-align: left;
+    width: 50%;
+  }
+
+  .th-noir {
+    background: var(--noir);
+    color: #fff;
+    text-align: left;
+    width: 50%;
+  }
+
+  .diagnostico-table tbody tr {
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    transition: background 0.2s;
+  }
+
+  .diagnostico-table tbody tr:hover { background: rgba(139,0,0,0.04); }
+  .diagnostico-table tbody tr:last-child { border-bottom: none; }
+
+  .diagnostico-table tbody td {
+    padding: 18px 32px;
+    font-size: 15px;
+    vertical-align: middle;
+  }
+
+  .td-tiene {
+    background: #fff;
+    color: var(--noir-soft);
+    display: table-cell;
+  }
+
+  .td-necesita {
+    background: var(--cream-dark);
+    color: var(--noir);
+  }
+
+  .check-icon {
+    color: var(--cherry);
+    font-weight: 700;
+    margin-right: 10px;
+  }
+
+  .arrow-icon {
+    color: var(--gold);
+    font-weight: 700;
+    margin-right: 10px;
+  }
+
+  .diagnostico-cierre {
+    margin-top: 64px;
+    padding: 48px;
+    background: var(--noir);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .diagnostico-cierre::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 300px; height: 100%;
+    background: linear-gradient(to left, rgba(139,0,0,0.25), transparent);
+    pointer-events: none;
+  }
+
+  .diagnostico-cierre p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 720px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .diagnostico-cierre strong {
+    color: var(--cherry-light);
+    font-weight: 600;
+  }
+
+  /* ─── PACKAGES SHARED ─── */
+  .pkg-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 56px;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .pkg-title-block {}
+
+  .pkg-number {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cherry);
+    margin-bottom: 12px;
+  }
+
+  .pkg-title {
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 700;
+    color: var(--noir);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .pkg-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+
+  .pkg-price-block {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .pkg-price-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .pkg-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 54px);
+    font-weight: 700;
+    color: var(--cherry);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .pkg-price small {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+
+  /* Content table */
+  .content-table-wrap {
+    margin-bottom: 48px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .content-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .content-table thead th {
+    background: var(--noir);
+    color: #fff;
+    padding: 14px 24px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  .content-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+
+  .content-table tbody tr:hover { background: rgba(139,0,0,0.04); }
+  .content-table tbody tr:last-child { border-bottom: none; }
+
+  .content-table td {
+    padding: 16px 24px;
+    font-size: 14px;
+    vertical-align: top;
+    color: var(--noir-soft);
+  }
+
+  .content-table .td-format {
+    font-weight: 600;
+    color: var(--noir);
+    white-space: nowrap;
+  }
+
+  .content-table .td-qty {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--cherry);
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .content-table .td-total {
+    background: var(--cherry);
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .content-table .td-total-qty {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    background: var(--cherry);
+  }
+
+  /* Services list */
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+
+  .service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 20px;
+    background: var(--cream);
+    border-left: 3px solid var(--cherry);
+    font-size: 14px;
+    color: var(--noir-soft);
+    line-height: 1.5;
+  }
+
+  .service-item::before {
+    content: '—';
+    color: var(--cherry);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* Parrilla */
+  .parrilla-section {
+    margin-bottom: 32px;
+  }
+
+  .parrilla-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+  }
+
+  .parrilla-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+  }
+
+  .parrilla-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+  }
+
+  .parrilla-table thead th {
+    background: var(--cream-dark);
+    padding: 10px 16px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--noir);
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+
+  .parrilla-table thead th:first-child { text-align: left; }
+  .parrilla-table thead th:last-child { border-right: none; }
+
+  .parrilla-table tbody tr { border-bottom: 1px solid var(--border); }
+  .parrilla-table tbody tr:last-child { border-bottom: none; }
+  .parrilla-table tbody tr.cierre-row { background: rgba(139,0,0,0.06); }
+
+  .parrilla-table td {
+    padding: 10px 16px;
+    font-size: 13px;
+    color: var(--noir-soft);
+    text-align: center;
+    border-right: 1px solid var(--border);
+    vertical-align: middle;
+  }
+
+  .parrilla-table td:first-child { text-align: left; font-weight: 600; color: var(--noir); }
+  .parrilla-table td:last-child { border-right: none; }
+
+  .parrilla-caption {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    font-style: italic;
+  }
+
+  /* PKG recommended badge */
+  .recommended-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: var(--noir);
+    padding: 6px 16px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  /* ─── PKG BACKGROUNDS ─── */
+  .pkg-01 { background: var(--warm-white); }
+  .pkg-02 { background: var(--cream); }
+  .pkg-03 { background: var(--noir); }
+
+  .pkg-03 .pkg-title { color: #fff; }
+  .pkg-03 .pkg-subtitle { color: rgba(255,255,255,0.5); }
+  .pkg-03 .pkg-number { color: var(--gold-light); }
+  .pkg-03 .section-label { color: var(--gold-light); }
+  .pkg-03 .section-label::after { background: rgba(196,162,101,0.3); }
+  .pkg-03 .content-table thead th { background: rgba(255,255,255,0.1); }
+  .pkg-03 .content-table tbody tr { border-color: rgba(255,255,255,0.08); }
+  .pkg-03 .content-table td { color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.04); }
+  .pkg-03 .content-table .td-format { color: #fff; }
+  .pkg-03 .content-table tbody tr:hover { background: rgba(255,255,255,0.07); }
+  .pkg-03 .content-table-wrap { border-color: rgba(255,255,255,0.1); }
+  .pkg-03 .service-item { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.8); border-color: var(--gold); }
+  .pkg-03 .service-item::before { color: var(--gold); }
+  .pkg-03 .parrilla-label { color: rgba(255,255,255,0.5); }
+  .pkg-03 .parrilla-table-wrap { border-color: rgba(255,255,255,0.1); }
+  .pkg-03 .parrilla-table thead th { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.08); }
+  .pkg-03 .parrilla-table td { color: rgba(255,255,255,0.75); border-color: rgba(255,255,255,0.08); }
+  .pkg-03 .parrilla-table td:first-child { color: rgba(255,255,255,0.95); }
+  .pkg-03 .parrilla-table tbody tr.cierre-row { background: rgba(196,162,101,0.1); }
+  .pkg-03 .parrilla-caption { color: rgba(255,255,255,0.4); }
+  .pkg-03 .parrilla-table tbody tr { border-color: rgba(255,255,255,0.08); }
+
+  /* ─── ADD-ONS ─── */
+  .addons { background: var(--cream); }
+
+  .addons-table-wrap {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    margin-bottom: 64px;
+  }
+
+  .addons-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .addons-table thead th {
+    background: var(--noir);
+    color: #fff;
+    padding: 14px 24px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  .addons-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+
+  .addons-table tbody tr:hover { background: rgba(139,0,0,0.04); }
+  .addons-table tbody tr:last-child { border-bottom: none; }
+
+  .addons-table td {
+    padding: 20px 24px;
+    font-size: 14px;
+    color: var(--noir-soft);
+    vertical-align: top;
+  }
+
+  .addons-table .td-servicio { font-weight: 600; color: var(--noir); }
+
+  .addons-table .td-precio {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--cherry);
+    white-space: nowrap;
+  }
+
+  /* Condiciones */
+  .condiciones-title {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
+    color: var(--noir);
+  }
+
+  .condiciones-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .condicion-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px 24px;
+    background: #fff;
+    border-left: 4px solid var(--cherry);
+  }
+
+  .condicion-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--cherry);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 40px;
+  }
+
+  .condicion-text {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--noir-soft);
+    padding-top: 6px;
+  }
+
+  .condicion-text strong { color: var(--noir); font-weight: 600; }
+
+  /* ─── CIERRE ─── */
+  .cierre {
+    background: var(--noir);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cierre::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(139,0,0,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cierre-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 60px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cierre-h1 {
+    font-size: clamp(72px, 10vw, 140px);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+    margin-bottom: 24px;
+  }
+
+  .cierre-h1 em {
+    font-style: italic;
+    color: var(--cherry-light);
+  }
+
+  .cierre-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 80px;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    margin-bottom: 80px;
+  }
+
+  .step-card {
+    background: rgba(255,255,255,0.04);
+    padding: 40px;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: background 0.3s;
+  }
+
+  .step-card:hover { background: rgba(139,0,0,0.15); }
+
+  .step-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    font-weight: 700;
+    color: rgba(139,0,0,0.3);
+    line-height: 1;
+    margin-bottom: 16px;
+    letter-spacing: -0.04em;
+  }
+
+  .step-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .step-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .cierre-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 48px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .cierre-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.03em;
+  }
+
+  .cierre-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.35);
+    text-align: right;
+  }
+
+  /* ─── DIVIDERS ─── */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--cherry), transparent);
+    opacity: 0.3;
+  }
+
+  /* ─── STARS ─── */
+  .star { color: var(--gold); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 120px 24px 40px; }
+    .hero-right { display: none; }
+    .section-inner { padding: 60px 24px; }
+    .pkg-header { flex-direction: column; }
+    .pkg-price-block { text-align: left; }
+    .services-grid { grid-template-columns: 1fr; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .diagnostico-table thead th, .diagnostico-table tbody td { padding: 12px 16px; font-size: 13px; }
+    .cierre-footer { flex-direction: column; }
+    .cierre-tagline { text-align: left; }
+    .cierre-h1 { font-size: clamp(52px, 12vw, 80px); }
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.8s ease both; }
+  .hero-title   { animation: fadeUp 0.8s 0.1s ease both; }
+  .hero-subtitle{ animation: fadeUp 0.8s 0.2s ease both; }
+  .hero-cta     { animation: fadeUp 0.8s 0.3s ease both; }
+
+  /* Pkg 03 star icon */
+  .star-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: var(--gold);
+    color: var(--noir);
+    font-size: 13px;
+    border-radius: 50%;
+    margin-right: 4px;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--noir); }
+  ::-webkit-scrollbar-thumb { background: var(--cherry); border-radius: 2px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">ż<span>eal</span></div>
+  <ul class="nav-links">
+    <li><a href="#diagnostico">Diagnóstico</a></li>
+    <li><a href="#paquete-01">Paquete 01</a></li>
+    <li><a href="#paquete-02">Paquete 02</a></li>
+    <li><a href="#paquete-03">Paquete 03</a></li>
+    <li><a href="#addons">Add-ons</a></li>
+    <li><a href="#cierre">Arranquemos</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PÁGINA 1 — HERO                             -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Propuesta Comercial · 2025</div>
+    <h1 class="hero-title">
+      Marketing<br>que<br><em>cierra.</em>
+    </h1>
+    <p class="hero-subtitle">Infraestructura visual y digital<br>para inmuebles de alto ticket.</p>
+    <a href="#diagnostico" class="hero-cta">Ver propuesta completa →</a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-logo-container">
+      <img src="LOGO EN ILUSTRATOR 2 versiones.pdf.png" alt="ZEAL" class="hero-logo-img">
+      <div class="hero-divider"></div>
+      <div class="hero-for-label">para</div>
+      <div class="hero-client">Por Cuadras</div>
+      <div class="hero-divider"></div>
+      <div class="hero-meta">
+        <div class="hero-meta-item">Oriente Antioqueño</div>
+        <div class="hero-meta-item">Inmuebles Luxury</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PÁGINA 2 — DIAGNÓSTICO                      -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="diagnostico" id="diagnostico">
+  <div class="section-inner">
+    <div class="section-label">Página 02 — Diagnóstico</div>
+
+    <p class="diagnostico-intro">
+      Por Cuadras es una inmobiliaria con operación consolidada en el oriente antioqueño. Manejan un portafolio de <strong>600 propiedades activas</strong>, ingresan <strong>30 nuevas al mes</strong> y tienen <strong>3 asesores comerciales</strong>. Su ticket promedio va desde <strong>$1.000 millones</strong> hasta <strong>$8.000 millones COP</strong>. Tienen manual de marca, vocera definida y referentes claros de posicionamiento luxury. Lo que no tienen es la infraestructura de marketing que convierta ese activo en visibilidad y en cierre de ventas.
+    </p>
+
+    <div class="diagnostico-table-wrap">
+      <table class="diagnostico-table">
+        <thead>
+          <tr>
+            <th class="th-cherry">Lo que tiene</th>
+            <th class="th-noir">Lo que necesita</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="background:#fff;"><span class="check-icon">✓</span> 600 propiedades activas</td>
+            <td style="background:var(--cream-dark);"><span class="arrow-icon">→</span> Producción visual profesional</td>
+          </tr>
+          <tr>
+            <td style="background:#fff;"><span class="check-icon">✓</span> 30 propiedades nuevas/mes</td>
+            <td style="background:var(--cream-dark);"><span class="arrow-icon">→</span> Estrategia de contenido mensual</td>
+          </tr>
+          <tr>
+            <td style="background:#fff;"><span class="check-icon">✓</span> 3 asesores comerciales</td>
+            <td style="background:var(--cream-dark);"><span class="arrow-icon">→</span> Community management activo</td>
+          </tr>
+          <tr>
+            <td style="background:#fff;"><span class="check-icon">✓</span> Vocera definida: Ana Isabel Restrepo</td>
+            <td style="background:var(--cream-dark);"><span class="arrow-icon">→</span> Dirección ante cámara y storytelling</td>
+          </tr>
+          <tr>
+            <td style="background:#fff;"><span class="check-icon">✓</span> Manual de marca</td>
+            <td style="background:var(--cream-dark);"><span class="arrow-icon">→</span> Ficha técnica estándar para redes</td>
+          </tr>
+          <tr>
+            <td style="background:#fff;"><span class="check-icon">✓</span> Operación en 9 municipios</td>
+            <td style="background:var(--cream-dark);"><span class="arrow-icon">→</span> Plan de pauta geolocalizada</td>
+          </tr>
+          <tr>
+            <td style="background:#fff;"><span class="check-icon">✓</span> Tracción orgánica iniciada en 2025</td>
+            <td style="background:var(--cream-dark);"><span class="arrow-icon">→</span> Base de datos de prospectos calificados</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="diagnostico-cierre">
+      <p>
+        El marketing de inmuebles de alto ticket en Colombia se gana con dos cosas: <strong>producción visual que haga sentir el espacio antes de verlo</strong>, y presencia digital consistente que posicione a Por Cuadras como la referencia luxury del oriente. <strong>ZEAL entrega ambas.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PÁGINA 3 — PAQUETE 01                       -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="pkg-01" id="paquete-01">
+  <div class="section-inner">
+    <div class="section-label">Página 03 — Paquete 01</div>
+
+    <div class="pkg-header">
+      <div class="pkg-title-block">
+        <div class="pkg-number">Paquete 01</div>
+        <h2 class="pkg-title">ZEAL Visual</h2>
+        <p class="pkg-subtitle">Producción + presencia activa en Instagram</p>
+      </div>
+      <div class="pkg-price-block">
+        <div class="pkg-price-label">Inversión mensual</div>
+        <div class="pkg-price">$2.800.000<small>/mes</small></div>
+      </div>
+    </div>
+
+    <!-- Tabla contenido -->
+    <div class="content-table-wrap">
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Formato</th>
+            <th style="text-align:center;">Cantidad</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-format">Carrusel + Video por propiedad</td>
+            <td class="td-qty">5</td>
+            <td>10 fotos editadas + video corto por propiedad. Producción ZEAL en locación.</td>
+          </tr>
+          <tr>
+            <td class="td-format">Reels temáticos</td>
+            <td class="td-qty">2</td>
+            <td>Contenido educativo / lifestyle: avalúos, tops de propiedades, tendencias.</td>
+          </tr>
+          <tr>
+            <td class="td-format">Posts gráficos</td>
+            <td class="td-qty">3</td>
+            <td>Piezas de diseño para complementar el contenido audiovisual.</td>
+          </tr>
+          <tr>
+            <td class="td-total">TOTAL PUBLICACIONES</td>
+            <td class="td-total-qty">15</td>
+            <td class="td-total">1 red activa — Instagram</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Servicios incluidos -->
+    <div class="parrilla-label" style="margin-bottom:16px; font-size:11px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted);">Servicios incluidos</div>
+    <div class="services-grid" style="margin-bottom:40px;">
+      <div class="service-item">2 sesiones estratégicas al mes</div>
+      <div class="service-item">Community management Instagram (publicación, DMs, comentarios)</div>
+      <div class="service-item">Diseño gráfico: ficha técnica estándar por propiedad + piezas para redes</div>
+      <div class="service-item">Gestión de pauta Meta (fee de gestión — inversión publicitaria aparte)</div>
+      <div class="service-item">Si no se activa pauta: se suma 1 propiedad adicional (6 en total)</div>
+      <div class="service-item">Reporte de métricas solo si hay pauta activa</div>
+    </div>
+
+    <!-- Parrilla -->
+    <div class="parrilla-section">
+      <div class="parrilla-label">Parrilla de contenido — ejemplo mensual</div>
+      <div class="parrilla-table-wrap">
+        <table class="parrilla-table">
+          <thead>
+            <tr>
+              <th>Semana</th>
+              <th>Lunes</th>
+              <th>Miércoles</th>
+              <th>Viernes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>S1</td>
+              <td>Carrusel P1</td>
+              <td>Video P1</td>
+              <td>Post gráfico</td>
+            </tr>
+            <tr>
+              <td>S2</td>
+              <td>Carrusel P2</td>
+              <td>Video P2</td>
+              <td>Reel temático</td>
+            </tr>
+            <tr>
+              <td>S3</td>
+              <td>Carrusel P3</td>
+              <td>Video P3</td>
+              <td>Post gráfico</td>
+            </tr>
+            <tr>
+              <td>S4</td>
+              <td>Carrusel P4</td>
+              <td>Video P4</td>
+              <td>Reel temático</td>
+            </tr>
+            <tr class="cierre-row">
+              <td>Cierre</td>
+              <td>Carrusel P5</td>
+              <td>Video P5</td>
+              <td>Post gráfico</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="parrilla-caption">15 publicaciones · 1 red activa · frecuencia: 3 por semana</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PÁGINA 4 — PAQUETE 02                       -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="pkg-02" id="paquete-02">
+  <div class="section-inner">
+    <div class="section-label">Página 04 — Paquete 02</div>
+
+    <div class="pkg-header">
+      <div class="pkg-title-block">
+        <div class="pkg-number">Paquete 02</div>
+        <h2 class="pkg-title">ZEAL Inmobiliario</h2>
+        <p class="pkg-subtitle">Área de marketing activa + múltiples canales</p>
+      </div>
+      <div class="pkg-price-block">
+        <div class="pkg-price-label">Inversión mensual</div>
+        <div class="pkg-price">$5.000.000<small>/mes</small></div>
+      </div>
+    </div>
+
+    <div class="content-table-wrap">
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Formato</th>
+            <th style="text-align:center;">Cantidad</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-format">Carrusel + Video por propiedad</td>
+            <td class="td-qty">10</td>
+            <td>10 fotos editadas + video corto por propiedad. Producción ZEAL en locación.</td>
+          </tr>
+          <tr>
+            <td class="td-format">Reels temáticos</td>
+            <td class="td-qty">3</td>
+            <td>Contenido educativo / lifestyle: avalúos, tops, zonas del oriente.</td>
+          </tr>
+          <tr>
+            <td class="td-format">Posts gráficos</td>
+            <td class="td-qty">5</td>
+            <td>Piezas de diseño para complementar el contenido audiovisual.</td>
+          </tr>
+          <tr>
+            <td class="td-total">TOTAL PUBLICACIONES</td>
+            <td class="td-total-qty">28</td>
+            <td class="td-total">3 redes activas — Instagram, TikTok, Facebook</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="parrilla-label" style="margin-bottom:16px; font-size:11px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted);">Servicios incluidos</div>
+    <div class="services-grid" style="margin-bottom:40px;">
+      <div class="service-item">2 sesiones estratégicas al mes</div>
+      <div class="service-item">Community management 3 redes: Instagram, TikTok, Facebook</div>
+      <div class="service-item">Diseño gráfico: ficha técnica estándar + piezas para redes</div>
+      <div class="service-item">Email marketing hasta 3 campañas/mes</div>
+      <div class="service-item">Construcción de base de datos vía pauta (Meta Lead Ads) — solo si hay pauta activa</div>
+      <div class="service-item">Si no se activa pauta: se suma 1 propiedad adicional (11 en total)</div>
+      <div class="service-item">Gestión de pauta Meta (fee de gestión — inversión publicitaria aparte)</div>
+      <div class="service-item">Reporte mensual de resultados</div>
+    </div>
+
+    <div class="parrilla-section">
+      <div class="parrilla-label">Parrilla de contenido — ejemplo mensual</div>
+      <div class="parrilla-table-wrap">
+        <table class="parrilla-table">
+          <thead>
+            <tr>
+              <th>Semana</th>
+              <th>Lunes</th>
+              <th>Martes</th>
+              <th>Miércoles</th>
+              <th>Jueves</th>
+              <th>Viernes</th>
+              <th>Sábado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>S1</td>
+              <td>C. P1</td>
+              <td>Video P1</td>
+              <td>C. P2</td>
+              <td>Video P2</td>
+              <td>Reel tem.</td>
+              <td>Post grá.</td>
+            </tr>
+            <tr>
+              <td>S2</td>
+              <td>C. P3</td>
+              <td>Video P3</td>
+              <td>C. P4</td>
+              <td>Video P4</td>
+              <td>Post grá.</td>
+              <td>Reel tem.</td>
+            </tr>
+            <tr>
+              <td>S3</td>
+              <td>C. P5</td>
+              <td>Video P5</td>
+              <td>C. P6</td>
+              <td>Video P6</td>
+              <td>Post grá.</td>
+              <td>Reel tem.</td>
+            </tr>
+            <tr>
+              <td>S4</td>
+              <td>C. P7</td>
+              <td>Video P7</td>
+              <td>C. P8</td>
+              <td>Video P8</td>
+              <td>Post grá.</td>
+              <td>Reel tem.</td>
+            </tr>
+            <tr class="cierre-row">
+              <td>Cierre</td>
+              <td>C. P9</td>
+              <td>Video P9</td>
+              <td>C. P10</td>
+              <td>Video P10</td>
+              <td>Post grá.</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="parrilla-caption">28 publicaciones · 3 redes activas · frecuencia: 6–7 por semana</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PÁGINA 5 — PAQUETE 03 ★                     -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="pkg-03" id="paquete-03">
+  <div class="section-inner">
+    <div class="section-label">Página 05 — Paquete 03</div>
+
+    <div class="pkg-header">
+      <div class="pkg-title-block">
+        <div class="recommended-badge"><span class="star">★</span> Más recomendado</div>
+        <div class="pkg-number">Paquete 03</div>
+        <h2 class="pkg-title">ZEAL 360 Inmobiliario</h2>
+        <p class="pkg-subtitle">Área completa + máxima visibilidad digital</p>
+      </div>
+      <div class="pkg-price-block">
+        <div class="pkg-price-label" style="color:rgba(255,255,255,0.4);">Inversión mensual</div>
+        <div class="pkg-price" style="color:var(--gold-light);">$7.000.000<small style="color:rgba(255,255,255,0.4);">/mes</small></div>
+      </div>
+    </div>
+
+    <div class="content-table-wrap">
+      <table class="content-table">
+        <thead>
+          <tr>
+            <th>Formato</th>
+            <th style="text-align:center;">Cantidad</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-format">Carrusel + Video por propiedad</td>
+            <td class="td-qty" style="color:var(--gold-light);">15</td>
+            <td>10 fotos editadas + video corto por propiedad. Producción ZEAL en locación.</td>
+          </tr>
+          <tr>
+            <td class="td-format">Reels temáticos</td>
+            <td class="td-qty" style="color:var(--gold-light);">4</td>
+            <td>Contenido educativo / lifestyle / marca personal de Ana Isabel.</td>
+          </tr>
+          <tr>
+            <td class="td-format">Posts gráficos</td>
+            <td class="td-qty" style="color:var(--gold-light);">6</td>
+            <td>Piezas de diseño de alto estándar para todos los canales.</td>
+          </tr>
+          <tr>
+            <td class="td-total" style="background:var(--gold); color:var(--noir);">TOTAL PUBLICACIONES</td>
+            <td class="td-total-qty" style="background:var(--gold); color:var(--noir); font-size:36px;">40</td>
+            <td class="td-total" style="background:var(--gold); color:var(--noir);">3 redes activas — Instagram, TikTok, Facebook</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="parrilla-label">Servicios incluidos</div>
+    <div class="services-grid" style="margin-bottom:40px;">
+      <div class="service-item">2 sesiones estratégicas al mes</div>
+      <div class="service-item">Community management 3 redes: Instagram, TikTok, Facebook</div>
+      <div class="service-item">Diseño gráfico completo + ficha técnica estándar por propiedad</div>
+      <div class="service-item">Email marketing hasta 3 campañas/mes</div>
+      <div class="service-item">Construcción y gestión de base de datos vía pauta (Meta Lead Ads) — solo si hay pauta activa</div>
+      <div class="service-item">Si no se activa pauta: se suma 1 propiedad adicional (16 en total)</div>
+      <div class="service-item">Gestión de pauta 2 plataformas: Meta + Google (fee de gestión — inversión aparte)</div>
+      <div class="service-item">SEO técnico on-page trimestral</div>
+      <div class="service-item">Reporte mensual de resultados</div>
+    </div>
+
+    <div class="parrilla-section">
+      <div class="parrilla-label">Parrilla de contenido — ejemplo mensual</div>
+      <div class="parrilla-table-wrap">
+        <table class="parrilla-table">
+          <thead>
+            <tr>
+              <th>Sem.</th>
+              <th>Lunes</th>
+              <th>Martes</th>
+              <th>Miérc.</th>
+              <th>Jueves</th>
+              <th>Viernes</th>
+              <th>Sábado</th>
+              <th>Dom.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>S1</td>
+              <td>C.P1</td>
+              <td>V.P1</td>
+              <td>C.P2</td>
+              <td>V.P2</td>
+              <td>C.P3</td>
+              <td>V.P3</td>
+              <td>Reel</td>
+            </tr>
+            <tr>
+              <td>S2</td>
+              <td>C.P4</td>
+              <td>V.P4</td>
+              <td>C.P5</td>
+              <td>V.P5</td>
+              <td>C.P6</td>
+              <td>V.P6</td>
+              <td>Post</td>
+            </tr>
+            <tr>
+              <td>S3</td>
+              <td>C.P7</td>
+              <td>V.P7</td>
+              <td>C.P8</td>
+              <td>V.P8</td>
+              <td>C.P9</td>
+              <td>V.P9</td>
+              <td>Reel</td>
+            </tr>
+            <tr>
+              <td>S4</td>
+              <td>C.P10</td>
+              <td>V.P10</td>
+              <td>C.P11</td>
+              <td>V.P11</td>
+              <td>C.P12</td>
+              <td>V.P12</td>
+              <td>Post</td>
+            </tr>
+            <tr class="cierre-row">
+              <td>Cierre</td>
+              <td>C.P13</td>
+              <td>V.P13</td>
+              <td>C.P14</td>
+              <td>C.P15</td>
+              <td>V.P14</td>
+              <td>V.P15</td>
+              <td>Reel+Post</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="parrilla-caption">40 publicaciones · 3 redes activas · frecuencia: 7 por semana</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PÁGINA 6 — ADD-ONS + CONDICIONES            -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="addons" id="addons">
+  <div class="section-inner">
+    <div class="section-label">Página 06 — Add-ons &amp; Condiciones</div>
+
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(36px,4vw,54px); font-weight:700; color:var(--noir); letter-spacing:-0.03em; margin-bottom:40px;">
+      Servicios adicionales
+    </h2>
+
+    <div class="addons-table-wrap">
+      <table class="addons-table">
+        <thead>
+          <tr>
+            <th style="width:28%;">Servicio</th>
+            <th>Descripción</th>
+            <th style="width:22%;">Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-servicio">Producción por propiedad<br><small style="font-weight:400; color:var(--text-muted);">(con edición completa)</small></td>
+            <td>Sesión de fotografía + video en locación. Edición completa incluida. Zona base: Rionegro, Llanogrande, La Ceja, El Retiro, Guarne.</td>
+            <td class="td-precio">$530.000<br><small style="font-size:13px; color:var(--text-muted);">por propiedad</small></td>
+          </tr>
+          <tr>
+            <td class="td-servicio">Desplazamiento zona lejana</td>
+            <td>Guatapé, La Unión, Marinilla, San Antonio. Adicional sobre el precio de producción.</td>
+            <td class="td-precio" style="font-size:16px; color:var(--text-muted);">Cotización<br><small style="font-size:13px;">por escrito</small></td>
+          </tr>
+          <tr>
+            <td class="td-servicio">Portafolio web<br><small style="font-weight:400; color:var(--text-muted);">15 propiedades solo foto</small></td>
+            <td>Sesión de 1 día completo (12 horas). Fotografía profesional editada lista para web. No incluye transporte ni logística.</td>
+            <td class="td-precio">$1.800.000<br><small style="font-size:13px; color:var(--text-muted);">por sesión</small></td>
+          </tr>
+          <tr>
+            <td class="td-servicio">Servicios extra especiales</td>
+            <td>Video institucional, animaciones, edición avanzada, cubrimiento de eventos, material no digital.</td>
+            <td class="td-precio" style="font-size:16px; color:var(--text-muted);">Cotización<br><small style="font-size:13px;">por escrito</small></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Condiciones comerciales -->
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(36px,4vw,54px); font-weight:700; color:var(--noir); letter-spacing:-0.03em; margin-bottom:40px;">
+      Condiciones comerciales
+    </h2>
+
+    <div class="condiciones-list">
+      <div class="condicion-item">
+        <div class="condicion-num">1</div>
+        <div class="condicion-text">
+          <strong>La inversión publicitaria siempre es presupuesto aparte.</strong> ZEAL gestiona, optimiza y reporta la pauta — pero el dinero es de Por Cuadras en todo momento.
+        </div>
+      </div>
+      <div class="condicion-item">
+        <div class="condicion-num">2</div>
+        <div class="condicion-text">
+          <strong>Mínimo 3 meses de contrato sin excepción.</strong> El mes 1 es diagnóstico y estructura. Los resultados reales empiezan en el mes 2–3.
+        </div>
+      </div>
+      <div class="condicion-item">
+        <div class="condicion-num">3</div>
+        <div class="condicion-text">
+          <strong>Pago anticipado del 50% siempre.</strong> El mes se paga antes de que arranque la operación.
+        </div>
+      </div>
+      <div class="condicion-item">
+        <div class="condicion-num">4</div>
+        <div class="condicion-text">
+          <strong>Máximo 3 rondas de corrección por entrega audiovisual.</strong> Establecido desde el contrato. Protege los tiempos del equipo creativo.
+        </div>
+      </div>
+      <div class="condicion-item">
+        <div class="condicion-num">5</div>
+        <div class="condicion-text">
+          <strong>Todo servicio extra va cotizado y aprobado por escrito.</strong> Nada se ejecuta sin orden de compra o aprobación formal.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PÁGINA 7 — CIERRE                           -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="cierre" id="cierre">
+  <div class="cierre-inner">
+    <div class="section-label" style="color:var(--cherry-light); margin-bottom:48px;">Página 07 — Siguiente paso</div>
+
+    <h1 class="cierre-h1">Arranque<em>mos.</em></h1>
+    <p class="cierre-sub">Cuatro pasos para empezar a construir la presencia que Por Cuadras merece.</p>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">01</div>
+        <h3 class="step-title">Seleccionar el paquete</h3>
+        <p class="step-desc">Ana elige el paquete que se ajusta al objetivo y presupuesto actual. ZEAL puede asesorar en la decisión con base en el diagnóstico.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">02</div>
+        <h3 class="step-title">Contrato + 50% anticipado</h3>
+        <p class="step-desc">Firma del contrato y pago del 50% de la primera mensualidad. El mes arranca solo cuando la operación está respaldada.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">03</div>
+        <h3 class="step-title">Sesión de onboarding</h3>
+        <p class="step-desc">Reunión de kick-off con el equipo ZEAL y Ana Isabel. Revisión de marca, accesos, primeras propiedades a producir y calendario del mes 1.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">04</div>
+        <h3 class="step-title">Arranque de producción</h3>
+        <p class="step-desc">ZEAL agenda las primeras sesiones de producción en locación y la operación de contenido arranca en la primera semana del mes.</p>
+      </div>
+    </div>
+
+    <div class="cierre-footer">
+      <div>
+        <div class="cierre-logo">żeal</div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.25); letter-spacing:0.1em; text-transform:uppercase; margin-top:8px;">Propuesta Comercial · 2025</div>
+      </div>
+      <div class="cierre-tagline">
+        Producción visual que hace sentir<br>el espacio antes de verlo.
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
